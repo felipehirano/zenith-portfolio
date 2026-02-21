@@ -47,11 +47,6 @@ body {
   align-items: center;
 }
 
-/* LOGO à esquerda */
-.logo img {
-  height: 50px;
-}
-
 /* LOGO */
 .logo {
   position: relative;
@@ -60,6 +55,7 @@ body {
 }
 
 .logo img {
+  height: 50px;
   width: 100%;
   display: block;
   transition: opacity 0.3s ease;
@@ -71,15 +67,6 @@ body {
   top: 0;
   left: 0;
   opacity: 0;
-}
-
-/* Hover troca */
-.logo:hover .logo-white {
-  opacity: 0;
-}
-
-.logo:hover .logo-blue {
-  opacity: 1;
 }
 
 /* NAV CENTRALIZADA */
@@ -289,16 +276,6 @@ footer .container {
   }
 }
 
-@media(max-width: 768px) {
-  .metro-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content h1 {
-    font-size: 40px;
-  }
-}
-
 /* ===============================
    MOBILE
 ================================= */
@@ -311,6 +288,19 @@ footer .container {
 
   .logo {
     width: 110px;
+  }
+
+  .metro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .overlay {
+    opacity: 1;
+    background: rgba(0,0,0,0.6);
   }
 
   /* HERO */
@@ -343,7 +333,7 @@ footer .container {
 
   /* PORTFOLIO */
   .portfolio {
-    padding: 80px 0;
+    padding: 0;
   }
 
   .metro-grid {
@@ -407,4 +397,16 @@ footer .container {
   .hero-content p {
     font-size: 18px;
   }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .logo:hover .logo-white {
+    opacity: 0;
+  }
+
+  .logo:hover .logo-blue {
+    opacity: 1;
+  }
+
 }
