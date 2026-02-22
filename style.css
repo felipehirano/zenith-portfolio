@@ -195,6 +195,9 @@ body {
 }
 
 .tile {
+  text-decoration: none;
+  color: inherit;
+  display: block;
   position: relative;
   overflow: hidden;
 }
