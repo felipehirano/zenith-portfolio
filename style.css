@@ -202,6 +202,10 @@ body {
   overflow: hidden;
 }
 
+.tile h3 {
+  color: var(--text-main) !important;
+}
+
 .tile:visited,
 .tile:active,
 .tile:focus {
