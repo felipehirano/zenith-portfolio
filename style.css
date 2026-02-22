@@ -23,6 +23,10 @@ body {
   color: var(--text-main);
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 /* ===============================
    HEADER CENTRALIZADO
 ================================= */
@@ -70,9 +74,12 @@ body {
 }
 
 /* NAV CENTRALIZADA */
+/* NAV CENTRALIZADA REAL */
 .nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
   gap: 60px;
 }
 
@@ -85,8 +92,34 @@ body {
   transition: 0.3s;
 }
 
-.nav a:hover {
-  color: var(--accent);
+.nav a:visited,
+.nav a:active,
+.nav a:focus {
+  color: var(--text-main);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav a:hover {
+    color: var(--accent);
+  }
+}
+
+.hamburger {
+  display: none;
+  width: 28px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  height: 2px;
+  width: 100%;
+  background: var(--text-main);
+  transition: 0.3s ease;
 }
 
 /* ===============================
@@ -299,6 +332,37 @@ footer .container {
 @media(max-width: 1024px) {
   .metro-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav {
+    position: fixed;
+    top: 80px; /* altura do header */
+    left: 0;
+    width: 100%;
+
+    background: #111;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    padding: 40px 0;
+
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+
+  .nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }
 
