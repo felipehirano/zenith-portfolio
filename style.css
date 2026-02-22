@@ -246,12 +246,15 @@ body {
   border-bottom: 1px solid var(--text-main);
   padding-bottom: 4px;
   transition: 0.3s;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
-.read-more:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  cursor: pointer;
+.read-more:focus,
+.read-more:active {
+  color: var(--text-main);
+  border-color: var(--text-main);
+  outline: none;
 }
 
 /* FOOTER */
@@ -412,6 +415,12 @@ footer .container {
 
   .logo:hover .logo-blue {
     opacity: 1;
+  }
+
+  .read-more:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    cursor: pointer;
   }
 
 }
