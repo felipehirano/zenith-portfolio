@@ -230,14 +230,6 @@ body {
   opacity: 1;
 }
 
-.tag {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
 .overlay h3 {
   font-size: 22px;
   margin-bottom: 10px;
@@ -246,7 +238,7 @@ body {
 .read-more {
   font-size: 13px;
   letter-spacing: 1px;
-  color: var(--text-secondary);
+  color: var(--accent);
 }
 
 /* FOOTER */
