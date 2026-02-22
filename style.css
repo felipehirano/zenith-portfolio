@@ -209,6 +209,80 @@ body.menu-open {
 }
 
 /* ==================================================
+   SERVICES SECTION
+================================================== */
+
+.services-section {
+  position: relative;
+  padding: 120px 20px;
+  background: url("hero-bg.jpg") center center / cover no-repeat;
+  text-align: center;
+}
+
+.services-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.services-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.services-content h2 {
+  font-size: 40px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.services-content .hero-cta {
+  margin-top: 60px;
+  display: inline-block;
+}
+
+.services-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 40px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-circle {
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle img {
+  width: 80px;
+}
+
+.service-item h3 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.service-item p {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* ==================================================
    PORTFOLIO
 ================================================== */
 
@@ -339,6 +413,10 @@ footer {
     grid-row: span 2;
   }
 
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .nav {
     position: fixed;
     top: 80px;
@@ -404,6 +482,20 @@ footer {
 
   .tile.tall {
     height: 320px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services-content h2 {
+    font-size: 28px;
+  }
+
+  .icon-circle {
+    width: 80px;
+    height: 80px;
   }
 }
 
