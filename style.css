@@ -153,11 +153,15 @@ body {
   border-bottom: 1px solid var(--text-main);
   padding-bottom: 4px;
   transition: 0.3s;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
-.hero-cta:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+.hero-cta:focus,
+.hero-cta:active {
+  color: var(--text-main);
+  border-color: var(--text-main);
+  outline: none;
 }
 
 /* BUTTON */
@@ -408,6 +412,12 @@ footer .container {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
+  .hero-cta:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    cursor: pointer;
+  }
 
   .logo:hover .logo-white {
     opacity: 0;
