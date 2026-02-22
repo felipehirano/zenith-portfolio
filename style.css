@@ -303,7 +303,21 @@ footer .container {
   }
 
   .metro-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tile {
+    height: 220px;
+  }
+
+  .tile.large {
+    height: 260px;
+  }
+
+  .tile.tall {
+    height: 320px;
   }
 
   .hero-content h1 {
