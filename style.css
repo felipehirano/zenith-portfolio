@@ -268,17 +268,17 @@ body.menu-open {
 }
 
 .icon-circle img {
-  width: 80px;
+  width: 100px;
 }
 
 .service-item h3 {
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
 
 .service-item p {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--text-secondary);
 }
 
@@ -532,5 +532,14 @@ footer {
 
   .logo:hover .logo-blue {
     opacity: 1;
+  }
+
+  .service-item {
+    transition: 0.3s ease;
+  }
+
+  .service-item:hover {
+    opacity: 0.6;
+    cursor: pointer;
   }
 }
