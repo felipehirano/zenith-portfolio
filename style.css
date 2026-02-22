@@ -312,6 +312,9 @@ footer .container {
   }
 
   .tile {
+    text-decoration: none;
+    color: inherit;
+    display: block;
     height: 220px;
   }
 
