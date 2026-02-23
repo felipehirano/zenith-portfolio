@@ -177,6 +177,7 @@ body.menu-open {
 }
 
 .hero-content p {
+  text-align: left;
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-secondary);
@@ -705,4 +706,42 @@ footer {
     font-size: 14px;
     line-height: 1.8;
   }
+}
+
+/* ==================================
+   SCROLL REVEAL ANIMATION
+================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Variante lateral (opcional) */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
 }

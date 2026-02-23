@@ -34,3 +34,28 @@ if (hamburger && nav) {
   });
 
 }
+
+// ===============================
+// SCROLL REVEAL
+// ===============================
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+
+      const delay = entry.target.dataset.delay || 0;
+
+      setTimeout(() => {
+        entry.target.classList.add("active");
+      }, delay * 120);
+
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
