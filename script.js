@@ -61,12 +61,14 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach(el => revealObserver.observe(el));
 
 // ===============================
-// TILE FOLLOW CURSOR
+// TEXT REAL FOLLOW CURSOR
 // ===============================
+const tiles = document.querySelectorAll(".tile");
 
-const projectTiles = document.querySelectorAll(".tile");
+tiles.forEach(tile => {
 
-projectTiles.forEach(tile => {
+  const overlayContent = tile.querySelector(".overlay-content");
+  if (!overlayContent) return;
 
   tile.addEventListener("mousemove", (e) => {
 
@@ -75,17 +77,10 @@ projectTiles.forEach(tile => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+    const offset = 20;
 
-    const moveX = (x - centerX) * 0.1;
-    const moveY = (y - centerY) * 0.1;
+    overlayContent.style.transform =
+      `translate(${x + offset}px, ${y + offset}px)`;
 
-    tile.style.transform = `translate(${moveX}px, ${moveY}px)`;
   });
-
-  tile.addEventListener("mouseleave", () => {
-    tile.style.transform = `translate(0, 0)`;
-  });
-
 });

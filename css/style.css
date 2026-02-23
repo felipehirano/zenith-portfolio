@@ -352,14 +352,27 @@ body.menu-open {
   inset: 0;
   background: rgba(0,0,0,0.7);
   opacity: 0;
-  padding: 30px;
-  display: flex;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  /* padding: 30px; */
+  /* display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  transition: 0.7s ease;
+  justify-content: flex-end; */
+}
+
+.overlay-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(30px, calc(100% - 80px));
+  will-change: transform;
 }
 
 .tile:hover .overlay {
+  opacity: 1;
+}
+
+.tile:hover .overlay-content {
   opacity: 1;
 }
 
@@ -457,8 +470,7 @@ footer {
   }
 
   .overlay {
-    opacity: 1;
-    background: rgba(0,0,0,0.6);
+    display: none;
   }
 }
 
@@ -744,18 +756,4 @@ footer {
 .reveal-right.active {
   opacity: 1;
   transform: translateX(0);
-}
-
-/* ===============================
-   TILE CURSOR FOLLOW EFFECT
-================================= */
-
-.tile {
-  position: relative;
-  transition: transform 0.15s ease-out;
-  will-change: transform;
-}
-
-.metro-grid {
-  perspective: 1000px; /* cria profundidade */
 }
