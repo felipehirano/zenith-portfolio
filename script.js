@@ -59,3 +59,33 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 
 revealElements.forEach(el => revealObserver.observe(el));
+
+// ===============================
+// TILE FOLLOW CURSOR
+// ===============================
+
+const projectTiles = document.querySelectorAll(".tile");
+
+projectTiles.forEach(tile => {
+
+  tile.addEventListener("mousemove", (e) => {
+
+    const rect = tile.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const moveX = (x - centerX) * 0.1;
+    const moveY = (y - centerY) * 0.1;
+
+    tile.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+
+  tile.addEventListener("mouseleave", () => {
+    tile.style.transform = `translate(0, 0)`;
+  });
+
+});

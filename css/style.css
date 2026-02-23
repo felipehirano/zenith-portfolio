@@ -745,3 +745,17 @@ footer {
   opacity: 1;
   transform: translateX(0);
 }
+
+/* ===============================
+   TILE CURSOR FOLLOW EFFECT
+================================= */
+
+.tile {
+  position: relative;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
+}
+
+.metro-grid {
+  perspective: 1000px; /* cria profundidade */
+}
